@@ -7,7 +7,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('/imgs/bg.jpg'); /* Sostituisci con il percorso della tua immagine */
+    background-image: url('imgs/bg.jpg'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
