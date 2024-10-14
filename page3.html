@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Scegli l'Orario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" crossorigin href="/assets/style-_MqOAslg.css">
+</head>
+<body>
+    <div class="container">
+        <h1>A che ora preferisci?</h1>
+        <select id="time">
+            <option value="">Scegli l'orario</option>
+            <option value="19:30">19:30</option>
+            <option value="20:00">20:00</option>
+            <option value="20:30">20:30</option>
+            <option value="21:00">21:00</option>
+            <option value="21:30">21:30</option>
+        </select>
+        <br>
+        <button onclick="confirmChoice()">Conferma</button>
+    </div>
+
+    <script>
+        function confirmChoice() {
+            const time = document.getElementById('time').value;
+            const restaurantChoice = localStorage.getItem('restaurantChoice');
+            if (time) {
+                localStorage.setItem('chosenTime', time);
+                window.location.href = 'final.html';
+            } else {
+                alert('Per favore, seleziona un orario.');
+            }
+        }
+
+        function showFinalMessage(restaurant, time) {
+            const container = document.querySelector('.container');
+            container.innerHTML = `
+                <h1>Fantastico!</h1>
+                <p>Ci vediamo al ristorante ${restaurant} alle ${time}.</p>
+                <p>Non vedo l'ora!</p>
+            `;
+        }
+    </script>
+</body>
+</html>

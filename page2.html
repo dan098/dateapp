@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Scegli il Ristorante</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" crossorigin href="/assets/style-_MqOAslg.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Che tipo di ristorante preferisci?</h1>
+        <div class="options">
+            <div class="option" onclick="selectOption('Sushi')">
+                <img src="/imgs/sushi.png" alt="Sushi" style="max-width: 100%; height: auto;">
+                <p>Sushi</p>
+            </div>
+            <div class="option" onclick="selectOption('Ristorante')">
+                <img src="/imgs/restaurant.png" alt="Ristorante" style="max-width: 100%; height: auto;">
+                <p>Ristorante</p>
+            </div>
+            <div class="option" onclick="selectOption('Pizza')">
+                <img src="/imgs/pizza.png" alt="Pizza" style="max-width: 100%; height: auto;">
+                <p>Pizza</p>
+            </div>
+        </div>
+        <button onclick="nextPage()">Avanti</button>
+    </div>
+
+    <script>
+        let selectedOption = '';
+        function selectOption(option) {
+            selectedOption = option;
+            document.querySelectorAll('.option').forEach(el => el.style.border = 'none');
+            document.querySelector(`.option:nth-child(${['Sushi', 'Ristorante', 'Pizza'].indexOf(option) + 1})`).style.border = '2px solid #ff6b6b';
+        }
+        function nextPage() {
+            if (selectedOption) {
+                localStorage.setItem('restaurantChoice', selectedOption);
+                location.href = 'page3.html';
+            } else {
+                alert('No, stavolta scegli tu');
+            }
+        }
+    </script>
+</body>
+</html>

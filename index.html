@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Invito a Cena</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" crossorigin href="/assets/style-_MqOAslg.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ti va di cenare insieme?</h1>
+        <div class="options">
+            <button onclick="saveResponse('Si'); location.href='page2.html'">Sì</button>
+            <button onclick="saveResponse('No'); showRejectionMessage()">No</button>
+        </div>
+    </div>
+
+    <script>
+        function saveResponse(response) {
+            localStorage.setItem('invitationResponse', response);
+        }
+
+        function showRejectionMessage() {
+            alert('daiiiiiiiiiiiii :((');
+        }
+    </script>
+</body>
+</html>
